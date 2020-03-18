@@ -1,0 +1,145 @@
+.content{
+
+    width: 100%;
+
+  }
+
+  
+
+  .my-auto{
+
+    width: auto;
+
+    height: 45%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+  }
+
+  
+
+  
+
+  $red: #E30612;
+
+  
+
+  //<---------------------- INPUT STYLES --------------------->
+
+  input {
+
+    box-sizing: border-box;
+
+    width: 70%;
+
+    height: calc(3em + 2px);
+
+    margin: 0 0 1em;
+
+    padding: 1em;
+
+    border: 1px solid #ccc;
+
+    border-radius: 1.5em;
+
+    background: #fff;
+
+    resize: none;
+
+    outline: none;
+
+    font-weight: bold;
+
+    text-align: center;
+
+  }
+
+  input[required]:focus {
+
+    border-color: $red;
+
+  }
+
+  input[required]:focus + label[placeholder]:before {
+
+    color: $red;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+  }
+
+  input[required]:focus + label[placeholder]:before,
+
+  input[required]:valid + label[placeholder]:before {
+
+    -webkit-transition-duration: 0.2s;
+
+            transition-duration: 0.2s;
+
+    -webkit-transform: translate(-4em, -2.0em) scale(0.9, 0.9);
+
+            transform: translate(-4em, -2.0em) scale(0.9, 0.9);
+
+  }
+
+  input[required]:invalid + label[placeholder][alt]:before {
+
+    content: attr(alt);
+
+  }
+
+  input[required] + label[placeholder] {
+
+    display: block;
+
+    pointer-events: none;
+
+    line-height: 1.25em;
+
+    margin-top: calc(-3em - 2px);
+
+    margin-bottom: calc((3em - 1em) + 2px);
+
+  }
+
+  input[required] + label[placeholder]:before {
+
+    content: attr(placeholder);
+
+    display: inline-block;
+
+    margin: 0 calc(1em + 2px);
+
+    padding: 0 2px;
+
+    color: #898989;
+
+    white-space: nowrap;
+
+    -webkit-transition: 0.3s ease-in-out;
+
+    transition: 0.3s ease-in-out;
+
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+
+    background-image: linear-gradient(to bottom, #fff, #fff);
+
+    background-size: 100% 5px;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+  }
+
+  

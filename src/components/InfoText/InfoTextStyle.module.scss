@@ -1,0 +1,37 @@
+.container{
+    width: 100%;
+    margin-bottom: 2em;
+    position: inherit;
+}
+
+
+$gray-Color: rgb(48, 46, 46);
+.info-text{
+    text-align: left;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin-left: 1em;
+    color: $gray-Color;
+}
+
+.info-icon{
+    float: left;
+
+    svg {
+        width: 1.5em !important;
+        height: 1.5em !important;
+        fill: $gray-Color;
+    } 
+}
+
+
+.line{
+    width: 80%;
+    height: 0.05em;
+    float: left;
+    background-color: gray;
+    margin-top: 0.6em;
+    margin-left: 1em;
+}

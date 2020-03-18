@@ -1,0 +1,98 @@
+/*#region Pay Method Button*/
+
+.notification {
+    align-items: center;
+    margin: auto;
+
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.41);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.41);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.41);
+
+    background-color: white;
+    color: rgb(78, 78, 78);
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    font-size: 11px;
+    height: auto;
+
+    $border: 1.5px;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border transparent; /* !importanté */
+    border-radius: 1em;
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -$border; /* !importanté */
+        border-radius: inherit; /* !importanté */
+        background: linear-gradient(to right, rgb(255, 0, 34), rgb(255, 0, 140));;
+    }
+}
+
+.unactive{
+  color: gray;
+  
+  &:before {
+    background: none;
+  }
+
+  .badge{
+    display: none;
+  }
+
+  svg path{
+    fill: gray;
+  }
+}
+
+.selected{
+  span{
+    color: rgb(236, 17, 53);
+  }
+  
+  svg path{
+    fill: rgb(236, 17, 53);
+  }
+}
+  
+.notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 6px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+
+.notification .icon{
+    width: 5em;
+    margin-bottom: 0.5em;
+}
+
+.notification .inner-content{
+    padding: 0.5em 3.5em 0.5em 3.5em ;
+    height: 8em;
+    max-width: 15em;
+}
+
+.notification .badge svg {
+  height: 15px;
+  width: 15px;
+  
+
+  path{
+    padding: 0;
+    margin: 0;
+    fill: white;
+  }
+}
+
+.notification .badge svg path{
+  width: 0.5em;
+  fill: white;
+}
+/*#endregion*/

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+html,body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+
+.login-side-section{
+    height: 55rem;
+    //background: rgb(216, 216, 216);
+}
+
+$width-logo: 34%;
+.center-image{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: $width-logo;
+   margin-top: -$width-logo/2; /* Half the height */
+   margin-left: -$width-logo/2; /* Half the width */
+}
+
+.fluid_orange{
+  position: absolute;
+  width: 62em;
+  right: 47em;
+  top: -8.5em;
+  align-self: flex-end;
+}
+
+
+
+//<---------------------- BUTTON STYLES --------------->
+$red: #E30612;
+
+.button {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    width: 13em;
+    z-index: 1;
+    text-decoration: none !important;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $red;
+        border-radius: 5rem;
+        z-index: -2;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken($red, 15%);
+        transition: all .3s;
+        border-radius: 5rem;
+        z-index: -1;
+    }
+    &:hover {
+        color: #fff;
+        &:before {
+            width: 100%;
+        }
+    }
+}
+//<---------------------- BUTTON STYLES --------------->
+
+.content{
+  width: 100%;
+}
+
+.my-auto{
+  width: auto;
+  height: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+//<---------------------- INPUT STYLES --------------------->
+input[type="text"] {
+  box-sizing: border-box;
+  width: 70%;
+  height: calc(3em + 2px);
+  margin: 0 0 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1.5em;
+  background: #fff;
+  resize: none;
+  outline: none;
+  font-weight: bold;
+  text-align: center;
+}
+input[type="text"][required]:focus {
+  border-color: $red;
+}
+input[type="text"][required]:focus + label[placeholder]:before {
+  color: $red;
+  font-weight: bold;
+  font-size: 13px;
+}
+input[type="text"][required]:focus + label[placeholder]:before,
+input[type="text"][required]:valid + label[placeholder]:before {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: translate(-4em, -2.0em) scale(0.9, 0.9);
+          transform: translate(-4em, -2.0em) scale(0.9, 0.9);
+}
+input[type="text"][required]:invalid + label[placeholder][alt]:before {
+  content: attr(alt);
+}
+input[type="text"][required] + label[placeholder] {
+  display: block;
+  pointer-events: none;
+  line-height: 1.25em;
+  margin-top: calc(-3em - 2px);
+  margin-bottom: calc((3em - 1em) + 2px);
+}
+input[type="text"][required] + label[placeholder]:before {
+  content: attr(placeholder);
+  display: inline-block;
+  margin: 0 calc(1em + 2px);
+  padding: 0 2px;
+  color: #898989;
+  white-space: nowrap;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background-image: linear-gradient(to bottom, #fff, #fff);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+//<---------------------- INPUT STYLES --------------------->
+
+
+
+//<----------------------- Numeric Field ---------------------------->
+$char-w: 1ch;
+$gap: .5*$char-w;
+$n-char: 4;
+$in-w: $n-char*($char-w + $gap);
+
+.code-input {
+	display: block;
+	margin: 2em auto;
+	border: none;
+	padding: 0;
+	width: $in-w;
+	background: repeating-linear-gradient(90deg, 
+		dimgrey 0, dimgrey $char-w, 
+		transparent 0, transparent $char-w + $gap) 
+		0 100%/ #{$in-w - $gap} 2px no-repeat;
+	font: 10ch droid sans mono, consolas, monospace;
+	letter-spacing: $gap;
+	
+	&:focus {
+		outline: none;
+		color: $red;
+	}
+}
+//<----------------------- Numeric Field ---------------------------->

@@ -1,0 +1,35 @@
+.text-search {
+    min-width: 500px;
+    display: inline-block;
+
+}
+
+.icon-search {
+    position: absolute;
+    fill: rgb(39, 39, 39); 
+    padding-left: 1.8em;
+    padding-top: 0.2em;
+
+    > div > svg{
+        width: 1em;
+        height: 1em; 
+    }
+}
+.search-input {
+
+    background: none;
+    border: none;
+
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 10px;
+    margin-left: 20px;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 2em;
+    text-align:left;
+    width: 100%;
+
+    -webkit-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.23);
+    -moz-box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.23);
+    box-shadow: 3px 7px 11px 0px rgba(0,0,0,0.23);
+} 

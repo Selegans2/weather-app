@@ -1,0 +1,160 @@
+$barColor: rgb(245, 16, 54);
+$desactivate-color: rgb(247, 78, 106);
+
+ul{
+    width: auto;
+    margin: 0 auto;
+}
+
+.container {
+    width: 95%;
+    position: relative;
+    margin: 0 auto !important;
+    display: inline-block;
+}
+.progressbar {
+    counter-reset: step;
+}
+
+.size-3{
+    margin-left: 10em;
+}
+
+
+
+.circle{
+    position: relative;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    margin: 0 auto 25px auto;
+    border-radius: 50%;
+    background-color: $desactivate-color;
+
+    svg{
+        display: none;
+    }
+}
+
+.current{
+    animation: pulse 2s infinite;
+}
+
+.progressbar li.active .circle{
+    
+    background-color: $barColor;
+    position: relative;
+    top: 0px;
+
+    width: 40px;
+    height: 40px;
+    content: counter(step);
+    counter-increment: step;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: $barColor;
+
+    svg{
+        display: inline;
+        fill: white;
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
+
+
+
+
+
+
+.progressbar li {
+    list-style-type: none;
+    width: 25%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
+}
+
+
+
+
+.progressbar li:after {  
+    //width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #7d7d7d;
+    top: 20px;
+    left: -50%;
+    z-index: -1;
+
+    
+}
+.progressbar li:first-child:after {
+    content: none;
+}
+.progressbar li.active {
+    color: $barColor;
+
+}
+.progressbar li.active:before {
+    border-color: $barColor;
+    background-color: $barColor;
+}
+
+.progressbar li:after {
+    width: 100%;
+    background-color: $desactivate-color;
+    border: 1px solid $desactivate-color;
+}
+
+.progressbar li.active:after {
+    animation: nextStep 1s;
+    animation-fill-mode: forwards;
+    background-color: $barColor;
+    border: 2px solid $barColor;
+}
+
+
+// Progressing to next step animation for Step's progress bar
+@keyframes nextStep {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(221, 33, 74, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(221, 33, 64, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(221, 33, 96, 0); }
+  }
+  
+
+
+.step-description{
+
+    position: relative;
+    left: 30px;
+
+    strong{
+        font-size: 35px;
+        float: left;
+        padding-right: 5px;
+    }
+
+    p{
+        max-width: 200px;
+        font-weight: bold;
+        text-align: left;
+        padding-top: 10px;
+        
+    }
+}
